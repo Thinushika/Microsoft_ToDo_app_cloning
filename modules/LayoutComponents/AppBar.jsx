@@ -7,7 +7,9 @@ function AppBar() {
     return (
         <div className={styles.appBar}>
             {/* logo box */}
-            <div className={styles.appIconBox}></div>
+            <div className={styles.appIconBox}>
+                
+            </div>
             {/* search box */}
             {/* icons box */}
         </div>
