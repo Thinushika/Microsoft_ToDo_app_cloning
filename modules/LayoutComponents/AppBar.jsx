@@ -1,8 +1,8 @@
-import { AppsRounded } from "@mui/icons-material";
 import React from "react";
 import { makeStyles } from "@mui/styles";
-import { deepOrange, deepPurple } from '@mui/material/colors';
+import { deepOrange, deepPurple } from "@mui/material/colors";
 import { Avatar, Box, IconButton, Link } from "@mui/material";
+import { IoApps } from "react-icons/io5";
 
 const useStyles = makeStyles({
   appBar: {
@@ -15,14 +15,14 @@ const useStyles = makeStyles({
   },
   appbarLeft: {
     width: 48,
-    display: "inline",
+    display: "flex",
   },
   appbarRight: {
     width: 48,
-    display: "inline",
+    display: "flex",
   },
   appbarCenter: {
-    display: "inline",
+    display: "flex",
   },
   appsIcon: {
     position: "relative",
@@ -38,6 +38,14 @@ const useStyles = makeStyles({
     fontSize: 16,
     fontWeight: "bold",
     fontFamily: "Arial, Helvetica, sans-serif",
+    position: 'relative',
+  },
+  appAvatar: {
+    bgcolor: deepOrange[500],
+    width: 30,
+    height: 30,
+    margin: 8,
+    position: 'relative',
   },
 });
 
@@ -46,12 +54,16 @@ function AppBar() {
 
   return (
     <Box className={classes.appBar}>
+     
+
       {/* logo box */}
       <Box className={classes.appbarLeft}>
         <IconButton className={classes.appsIcon}>
-          <AppsRounded />
+          <IoApps />
         </IconButton>
       </Box>
+     
+     
       {/* search box */}
       <Box className={classes.appbarCenter}>
         <Link
@@ -65,14 +77,14 @@ function AppBar() {
           Outlook
         </Link>
       </Box>
+    
+
       {/* icons box */}
       <Box className={classes.appbarRight}>
-      <Avatar sx={{ 
-        bgcolor: deepOrange[500], 
-        width:30, 
-        height:30,
-         }}>N</Avatar>
+        <Avatar className={classes.appAvatar}>N</Avatar>
       </Box>
+
+
     </Box>
   );
 }
