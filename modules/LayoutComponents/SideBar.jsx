@@ -186,16 +186,19 @@ const useStyles = makeStyles({
 
   newItemContainer: {
     flexShrink: 0,
+    transform: 'none',
     zIndex: 1,
     display: "flex",
   },
   addItemBox: {
     overflow: "hidden",
+    transform: 'none',
     display: "flex",
     alignItems: "center",
     "&:hover": {
       color: "#324bdf",
-      height: "36px",
+      height: 48,
+      transform: 'none',
       fontSize: "0.9rem",
       padding: "0.8px",
       minHeight: "1.6rem",
@@ -206,12 +209,14 @@ const useStyles = makeStyles({
   addIcon: {
     lineHeight: "2rem",
     textAlign: "center",
+    transform: 'none',
     "&:hover &:active": {
       color: "#324bdf",
       fontSize: "0.8rem",
     },
   },
   addInput: {
+    transform: 'none',
     "&:hover, &:active": {
       border: "none !important",
       background: "none !important",
