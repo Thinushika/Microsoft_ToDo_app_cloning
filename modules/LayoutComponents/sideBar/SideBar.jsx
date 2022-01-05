@@ -18,6 +18,7 @@ const useStyles = makeStyles({
     borderRight: "1px solid #eaeaea",
     width: 290,
     zIndex: 60,
+    height: 650,
     display: "flex",
     flexDirection: "column",
   },
