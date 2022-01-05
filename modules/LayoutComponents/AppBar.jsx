@@ -29,11 +29,15 @@ const useStyles = makeStyles({
     display: "flex",
   },
   appbarRight: {
-    width: 48,
+    width: 192,
     display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    boxSizing: "border-box",
   },
   appbarCenter: {
     display: "flex",
+    justifyContent: 'space-between',
   },
   appsIcon: {
     position: "relative",
@@ -52,6 +56,7 @@ const useStyles = makeStyles({
     fontSize: 16,
     height: 40,
     marginTop: 5,
+    marginLeft: 5,
     fontWeight: "bold",
     fontFamily: "Arial, Helvetica, sans-serif",
     justifyContent: "flex-start",
@@ -65,23 +70,11 @@ const useStyles = makeStyles({
     position: "relative",
   },
 
-  officeIcons: {
-    flexDirection: "row",
-    alignItems: "center",
-    display: "flex",
-    justifyContent: "space-between",
-    boxSizing: "border-box",
-    width: "100%",
-    padding: 0,
-    margin: 0,
-  },
   footerIconLink: {
     padding: "12 0",
     height: 48,
     flex: "1 1 0",
-    display: "inline-block",
     boxSizing: "border-box",
-    width: "100%",
     cursor: "pointer",
     textAlign: "center",
   },
@@ -131,6 +124,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "#fff",
+  width: 400,
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
@@ -153,17 +147,7 @@ function AppBar() {
         <IconButton className={classes.appsIcon}>
           <IoApps />
         </IconButton>
-      </Box>
-
-      {/* search box */}
-      <Box className={classes.appbarCenter}>
-        <Box
-          sx={{
-            justifyContent: 'flex-start',
-            display:'flex',
-          }}
-        >
-          <Link
+        <Link
             className={classes.outlookLink}
             component="button"
             underline="false"
@@ -174,8 +158,10 @@ function AppBar() {
           >
             Outlook
           </Link>
-        </Box>
+      </Box>
 
+     
+      <Box className={classes.appbarCenter}>
         <Box>
           <Search sx={{ justifyContent: "center", marginTop: "10px" }}>
             <SearchIconWrapper>
@@ -184,9 +170,11 @@ function AppBar() {
             <StyledInputBase inputProps={{ "aria-label": "search" }} />
           </Search>
         </Box>
+        </Box>
+        
 
-        <Box className={classes.sidebarFooter}>
-          <Box className={classes.officeIcons}>
+      {/* icons box */}
+      <Box className={classes.appbarRight}>
             <Link href={"#"} className={classes.footerIconLink}>
               <a>
                 <IconButton className={classes.footerIconButton}>
@@ -210,15 +198,10 @@ function AppBar() {
                 </IconButton>
               </a>
             </Link>
-          </Box>
-        </Box>
+          <Avatar className={classes.appAvatar}>N</Avatar>
       </Box>
-
-      {/* icons box */}
-      <Box className={classes.appbarRight}>
-        <Avatar className={classes.appAvatar}>N</Avatar>
+        
       </Box>
-    </Box>
   );
 }
 
