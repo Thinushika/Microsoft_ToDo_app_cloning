@@ -1,8 +1,11 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
 import { Box, IconButton, List, ListItem, ListItemButton } from "@mui/material";
-import { IoAttach, IoCalendar, IoCheckmark, IoFileTray, IoHome, IoMail, IoMenuOutline, IoPeople, IoStar, IoSunny } from "react-icons/io5";
+import { IoAttach, IoCalendar, IoCheckmark, IoCalendarOutline, IoHome, IoMail, IoMenuOutline, IoPeople, IoStar, IoSunny, IoSunnyOutline, IoMailOutline, IoPeopleOutline } from "react-icons/io5";
 import Link from "next/link";
+import { IoMdStarOutline } from "react-icons/io";
+import { AiOutlineUser } from "react-icons/ai";
+import { VscHome } from "react-icons/vsc";
 
 const useStyles = makeStyles({
   leftColumn: {
@@ -100,6 +103,13 @@ const useStyles = makeStyles({
       backgroundColor: 'white',
     },
   },
+  listItemBoxSelected: {
+    minHeight: '1.6rem',
+    position: 'relative',
+    "&:hover":{
+      backgroundColor: '#ededed !important',
+    },
+  },
   listIconButton: {
     cursor:'pointer',
     boxSizing: 'border-box',
@@ -113,15 +123,25 @@ const useStyles = makeStyles({
       backgroundColor: 'white',
     },
   },
+  listIconButtonSelected: {
+    cursor:'pointer',
+    boxSizing: 'border-box',
+    height: '1.6rem',
+    minHeight: '1.6rem',
+    userSelect: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    fontWeight: 500,
+    padding: '0 12px',
+    "&:hover":{
+      backgroundColor: '#ededed !important',
+    },
+  },
   listIcon: {
     lineHeight: '1.6rem',
-    fontSize: '0.9rem',
+    fontSize: '1.2rem',
     textAlign: 'center',
     color: '#767678',
-    // display: 'inline-block',
-    // fontStyle: 'normal',
-    // fontWeight: 'normal',
-    // speak: 'none',
   },
   ListNameText: {
     margin: '0 8px',
@@ -136,7 +156,7 @@ const useStyles = makeStyles({
   },
   hover: {
     "&:hover":{
-      backgroundColor: 'white',
+      backgroundColor: '#ededed !important',
     },
   }
 });
@@ -157,17 +177,14 @@ function SideBar() {
 
 
 
-
-
-
         {/* nevigation menu */}
         <Box className={classes.sidebarContent}>
           <Box className={classes.ListsNav}>
           <nav sx={{paddingTop: 8}}>
             <List className={classes.ListBoxOneItem}>
-              <ListItem selected={true} className={classes.listItemBox, classes.active, classes.hover}>
-                <ListItemButton className={classes.listIconButton}>
-                  <IoSunny className={classes.listIcon}/>
+              <ListItem selected={true} className={classes.listItemBoxSelected, classes.active, classes.hover}>
+                <ListItemButton className={classes.listIconButtonSelected}>
+                  <IoSunnyOutline className={classes.listIcon}/>
                   <Box className={classes.ListNameText}>
                   <span>My Day</span>
                   </Box>
@@ -178,7 +195,7 @@ function SideBar() {
             <List className={classes.ListBoxOneItem}>
               <ListItem selected={false} className={classes.listItemBox}>
                 <ListItemButton className={classes.listIconButton}>
-                  <IoStar className={classes.listIcon}/>
+                  <IoMdStarOutline className={classes.listIcon}/>
                   <Box className={classes.ListNameText}>
                   <span>Important</span>
                   </Box>
@@ -189,7 +206,7 @@ function SideBar() {
             <List className={classes.ListBoxOneItem}>
               <ListItem selected={false} className={classes.listItemBox}>
                 <ListItemButton className={classes.listIconButton}>
-                  <IoCalendar className={classes.listIcon}/>
+                  <IoCalendarOutline className={classes.listIcon}/>
                   <Box className={classes.ListNameText}>
                   <span>Planned</span>
                   </Box>
@@ -200,7 +217,7 @@ function SideBar() {
             <List className={classes.ListBoxOneItem}>
               <ListItem selected={false} className={classes.listItemBox}>
                 <ListItemButton className={classes.listIconButton}>
-                  <IoPeople className={classes.listIcon}/>
+                  <AiOutlineUser className={classes.listIcon}/>
                   <Box className={classes.ListNameText}>
                   <span>Assigned to me</span>
                   </Box>
@@ -211,7 +228,7 @@ function SideBar() {
             <List className={classes.ListBoxOneItem}>
               <ListItem selected={false} className={classes.listItemBox}>
                 <ListItemButton className={classes.listIconButton}>
-                  <IoHome className={classes.listIcon}/>
+                  <VscHome className={classes.listIcon}/>
                   <Box className={classes.ListNameText}>
                   <span>Tasks</span>
                   </Box>
@@ -224,16 +241,13 @@ function SideBar() {
 
 
 
-
-
-
         <Box className={classes.sidebarFooter}>
           {/* side bar footer */}
           <Box className={classes.officeIcons}>
             <Link href={'#'} className={classes.footerIconLink}>
               <a>
                 <IconButton className={classes.footerIconButton}>
-                  <IoMail />
+                  <IoMailOutline />
                 </IconButton>
               </a>
             </Link>
@@ -241,7 +255,7 @@ function SideBar() {
             <Link href={'#'} className={classes.footerIconLink}>
               <a>
                 <IconButton className={classes.footerIconButton}>
-                  <IoCalendar />
+                  <IoCalendarOutline />
                 </IconButton>
               </a>
             </Link>
@@ -249,7 +263,7 @@ function SideBar() {
             <Link href={'#'} className={classes.footerIconLink}>
               <a>
                 <IconButton className={classes.footerIconButton}>
-                  <IoPeople />
+                  <IoPeopleOutline />
                 </IconButton>
               </a>
             </Link>
