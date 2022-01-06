@@ -8,9 +8,7 @@ import TaskToolbar from './TaskToolbar'
 const useStyles = makeStyles({
     container: {
         display: 'flex',
-        flexDirection: 'column',
-        height: 290,
-        backgroundColor: '#999'
+        position: 'absolute',
     }
 })
 

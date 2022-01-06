@@ -1,14 +1,6 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
-import { Box, IconButton } from "@mui/material";
-import {
-  IoAttach,
-  IoCheckmark,
-  IoCalendarOutline,
-  IoMailOutline,
-  IoPeopleOutline,
-} from "react-icons/io5";
-import Link from "next/link";
+import { Box } from "@mui/material";
 import SidebarHeader from "./SidebarHeader";
 import SidebarContent from "./SidebarContent";
 import SidebarFooter from "./SidebarFooter";
@@ -18,7 +10,7 @@ const useStyles = makeStyles({
     borderRight: "1px solid #eaeaea",
     width: 290,
     zIndex: 60,
-    height: 650,
+    height: 648,
     display: "flex",
     flexDirection: "column",
   },
