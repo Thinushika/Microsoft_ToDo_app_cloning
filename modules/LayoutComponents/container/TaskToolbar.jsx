@@ -1,35 +1,43 @@
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import SwapVertIcon from '@mui/icons-material/SwapVert';
 
 const useStyles = makeStyles({
   container: {
     display: "flex",
     flexDirection: "row",
-    width: '100%',
+    width: "100%",
     height: 80,
-    justifyContent: 'center',
-    backgroundColor: '#f7f7f7',
+    justifyContent: "center",
+    backgroundColor: "#fafafa",
   },
   containerLeft: {
     display: "flex",
     flexDirection: "row",
     width: "90%",
-    backgroundColor: '#bbb',
   },
   containerRight: {
     width: "10%",
-    float: 'right',
-    backgroundColor: '#545657',
+    float: "right",
+    textAlign: "center",
+    marginTop: "auto",
+    marginBottom: "auto",
   },
   left: {
-    backgroundColor: "#fff",
     width: "10%",
+    fontSize: "1.3rem",
+    whiteSpace: "nowrap",
+    color: "#0078D7",
+    textAlign: "center",
+    marginTop: "auto",
+    marginBottom: "auto",
   },
   right: {
-    backgroundColor: "#fafafa",
     width: "10%",
+    marginTop: "auto",
+    marginBottom: "auto",
   },
 });
 
@@ -40,13 +48,20 @@ const TaskToolbar = () => {
     <Box className={classes.container}>
       <Box className={classes.containerLeft}>
         <Box className={classes.left}>
-            <Typography>
-            Tasks
-            </Typography>
+          <span>Tasks</span>
         </Box>
-        <Box className={classes.right}>icon</Box>
+        <Box className={classes.right}>
+          <IconButton>
+            <MoreHorizIcon />
+          </IconButton>
+        </Box>
       </Box>
-      <Box className={classes.containerRight}>sort icon</Box>
+      <Box className={classes.containerRight}>
+          <IconButton>
+              <SwapVertIcon style={{fontSize: '20px', color: '#0078D7'}} />
+              <span style={{fontSize: '16px', color: '#0078D7'}}>Sort</span>
+          </IconButton>
+      </Box>
     </Box>
   );
 };
