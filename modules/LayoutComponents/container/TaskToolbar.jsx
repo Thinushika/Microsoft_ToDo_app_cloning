@@ -1,39 +1,52 @@
-import { Box, Grid, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 const useStyles = makeStyles({
-    container: {
-        backgroundColor: "#fff",
-        display: 'flex',
-        flexDirection: 'row',
-    }
+  container: {
+    display: "flex",
+    flexDirection: "row",
+    width: '100%',
+    height: 80,
+    justifyContent: 'center',
+    backgroundColor: '#f7f7f7',
+  },
+  containerLeft: {
+    display: "flex",
+    flexDirection: "row",
+    width: "90%",
+    backgroundColor: '#bbb',
+  },
+  containerRight: {
+    width: "10%",
+    float: 'right',
+    backgroundColor: '#545657',
+  },
+  left: {
+    backgroundColor: "#fff",
+    width: "10%",
+  },
+  right: {
+    backgroundColor: "#fafafa",
+    width: "10%",
+  },
 });
-
-const Item = styled(Paper)(({ theme }) => ({
-  //   ...theme.typography.body2,
-  padding: 0,
-  textAlign: "center",
-  backgroundColor: "transparent", //#efefef
-  borderColor: "transparent",
-}));
 
 const TaskToolbar = () => {
   const classes = useStyles();
 
   return (
-    <Box>
-      <Box className={classes.container}>
-        <Typography variant="h5" sx={{ color: "#0078D7" }}>
-          Tasks
-        </Typography>
-        <IconButton>
-            <MoreHorizIcon/>
-        </IconButton>
+    <Box className={classes.container}>
+      <Box className={classes.containerLeft}>
+        <Box className={classes.left}>
+            <Typography>
+            Tasks
+            </Typography>
+        </Box>
+        <Box className={classes.right}>icon</Box>
       </Box>
+      <Box className={classes.containerRight}>sort icon</Box>
     </Box>
   );
 };
