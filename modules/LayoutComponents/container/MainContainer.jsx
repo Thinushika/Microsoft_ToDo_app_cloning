@@ -9,6 +9,7 @@ const useStyles = makeStyles({
     container: {
         display: 'flex',
         position: 'absolute',
+        margin: 20,
     }
 })
 
@@ -16,7 +17,6 @@ const MainContainer = () => {
     const classes = useStyles();
     return (
         <Box className={classes.container}>
-            Welcome
             <TaskToolbar />
             <TaskContent />
         </Box>

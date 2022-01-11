@@ -8,7 +8,6 @@ import SidebarFooter from "./SidebarFooter";
 const useStyles = makeStyles({
   leftColumn: {
     borderRight: "1px solid #eaeaea",
-    width: 290,
     zIndex: 60,
     height: 648,
     display: "flex",
